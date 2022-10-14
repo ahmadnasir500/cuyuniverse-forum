@@ -50,8 +50,7 @@ export default function PostsPage(props) {
         {tags && tags.length > 0 &&
           <div className="py-2 px-2 w-full lg:w-2/3 xl:w-5/6 lg:p-0 lg:py-2 lg:mx-auto">
             <div className="flex flex-row flex-wrap bg-primary text-primary-content rounded-sm overflow-hidden">
-              <Link href={route('outer.main')} as="button" className="p-1"><FaArrowLeft /></Link>
-              <h5 className="p-1 italic">in trending</h5>
+              {tags ? <Link href={route('outer.main')} as="button" className="p-1"><FaArrowLeft /></Link> : <h5 className="p-1 italic">in trending</h5>}
               {tags.map((trend, i) => {
                 return (
                   <span className="py-1" key={i}>
